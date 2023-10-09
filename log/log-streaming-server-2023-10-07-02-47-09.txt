@@ -1,0 +1,74 @@
+2023-10-07 02:47:09,092 INFO [streaming_server.py:811] {'encoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/encoder-epoch-99-avg-1.int8.onnx', 'decoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/decoder-epoch-99-avg-1.int8.onnx', 'joiner': './sherpa-onnx-streaming-zipformer-en-2023-06-21/joiner-epoch-99-avg-1.int8.onnx', 'paraformer_encoder': None, 'paraformer_decoder': None, 'tokens': './sherpa-onnx-streaming-zipformer-en-2023-06-21/tokens.txt', 'sample_rate': 16000, 'feat_dim': 80, 'provider': 'cpu', 'decoding_method': 'greedy_search', 'num_active_paths': 4, 'use_endpoint': 1, 'rule1_min_trailing_silence': 2.4, 'rule2_min_trailing_silence': 1.2, 'rule3_min_utterance_length': 20, 'hotwords_file': '', 'hotwords_score': 1.5, 'port': 6006, 'nn_pool_size': 1, 'max_batch_size': 50, 'max_wait_ms': 10, 'max_message_size': 1048576, 'max_queue_size': 32, 'max_active_connections': 500, 'num_threads': 2, 'certificate': None, 'doc_root': 'web'}
+2023-10-07 02:47:11,544 INFO [streaming_server.py:629] No certificate provided
+2023-10-07 02:47:11,546 INFO [server.py:711] server listening on 0.0.0.0:6006
+2023-10-07 02:47:11,547 INFO [server.py:711] server listening on [::]:6006
+2023-10-07 02:47:11,547 INFO [streaming_server.py:655] Please visit one of the following addresses:
+
+  http://localhost:6006
+
+Since you are not providing a certificate, you cannot use your microphone from within the browser using public IP addresses. Only localhost can be used.You also cannot use 0.0.0.0 or 127.0.0.1
+2023-10-07 02:47:19,976 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:19,979 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,079 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,080 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,081 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,081 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,081 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,082 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,082 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,082 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,082 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,082 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,176 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,177 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,178 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,178 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,178 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,179 INFO [server.py:268] connection closed
+2023-10-07 02:47:20,186 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:47:20,187 INFO [server.py:268] connection closed
+2023-10-07 02:47:21,092 INFO [server.py:646] connection open
+2023-10-07 02:47:21,092 INFO [streaming_server.py:696] Connected: ('::1', 60754, 0, 0). Number of connections: 1/500
+2023-10-07 02:47:27,279 INFO [streaming_server.py:680] Disconnected: ('::1', 60754, 0, 0). Number of connections: 0/500
+2023-10-07 02:47:27,280 ERROR [server.py:242] connection handler failed
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/invocation_layer/hugging_face_inference.py", line 237, in _post
+    response = request_with_retry(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/utils/requests_utils.py", line 93, in request_with_retry
+    res.raise_for_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/server.py", line 240, in handler
+    await self.ws_handler(self)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 673, in handle_connection
+    await self.handle_connection_impl(socket)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 722, in handle_connection_impl
+    text = generate(message['text'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 104, in generate
+    out=pn(f"""You are a helpful friend, try responding to the persons statements in a conversation like manner
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_node.py", line 140, in __call__
+    return self.prompt(self.default_prompt_template, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_node.py", line 179, in prompt
+    output = self.prompt_model.invoke(prompt, **kwargs_copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_model.py", line 111, in invoke
+    output = self.model_invocation_layer.invoke(prompt=prompt, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/invocation_layer/hugging_face_inference.py", line 173, in invoke
+    response: requests.Response = self._post(
+                                  ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/invocation_layer/hugging_face_inference.py", line 254, in _post
+    raise HuggingFaceInferenceError(
+haystack.errors.HuggingFaceInferenceError: HuggingFace Inference returned an error.
+Status code: 503
+Response body: {"error":"Model mistralai/Mistral-7B-Instruct-v0.1 is currently loading","estimated_time":600.3140258789062}
+2023-10-07 02:47:27,294 INFO [server.py:268] connection closed

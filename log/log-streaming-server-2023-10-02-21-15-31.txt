@@ -1,0 +1,39 @@
+2023-10-02 21:15:31,224 INFO [streaming_server.py:786] {'encoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/encoder-epoch-99-avg-1.int8.onnx', 'decoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/decoder-epoch-99-avg-1.int8.onnx', 'joiner': './sherpa-onnx-streaming-zipformer-en-2023-06-21/joiner-epoch-99-avg-1.int8.onnx', 'paraformer_encoder': None, 'paraformer_decoder': None, 'tokens': './sherpa-onnx-streaming-zipformer-en-2023-06-21/tokens.txt', 'sample_rate': 16000, 'feat_dim': 80, 'provider': 'cpu', 'decoding_method': 'greedy_search', 'num_active_paths': 4, 'use_endpoint': 1, 'rule1_min_trailing_silence': 2.4, 'rule2_min_trailing_silence': 1.2, 'rule3_min_utterance_length': 20, 'hotwords_file': '', 'hotwords_score': 1.5, 'port': 6006, 'nn_pool_size': 1, 'max_batch_size': 50, 'max_wait_ms': 10, 'max_message_size': 1048576, 'max_queue_size': 32, 'max_active_connections': 500, 'num_threads': 2, 'certificate': None, 'doc_root': 'web'}
+2023-10-02 21:15:33,415 INFO [streaming_server.py:610] No certificate provided
+2023-10-02 21:15:33,417 INFO [server.py:713] server listening on [::]:6006
+2023-10-02 21:15:33,419 INFO [server.py:713] server listening on 0.0.0.0:6006
+2023-10-02 21:15:33,419 INFO [streaming_server.py:636] Please visit one of the following addresses:
+
+  http://localhost:6006
+
+Since you are not providing a certificate, you cannot use your microphone from within the browser using public IP addresses. Only localhost can be used.You also cannot use 0.0.0.0 or 127.0.0.1
+2023-10-02 21:15:54,867 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,868 INFO [server.py:264] connection closed
+2023-10-02 21:15:54,882 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,883 INFO [server.py:264] connection closed
+2023-10-02 21:15:54,890 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,890 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,891 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,891 INFO [server.py:264] connection closed
+2023-10-02 21:15:54,891 INFO [server.py:264] connection closed
+2023-10-02 21:15:54,891 INFO [server.py:264] connection closed
+2023-10-02 21:15:54,920 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:54,920 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,278 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,279 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,285 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,286 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,287 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,287 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,288 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,288 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,288 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,288 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,289 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,289 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,313 INFO [server.py:229] connection failed (200 OK)
+2023-10-02 21:15:57,314 INFO [server.py:229] connection failed (404 Not Found)
+2023-10-02 21:15:57,314 INFO [server.py:264] connection closed
+2023-10-02 21:15:57,315 INFO [server.py:264] connection closed
+2023-10-02 21:16:52,954 INFO [server.py:648] connection open
+2023-10-02 21:16:52,955 INFO [streaming_server.py:677] Connected: ('::1', 63391, 0, 0). Number of connections: 1/500

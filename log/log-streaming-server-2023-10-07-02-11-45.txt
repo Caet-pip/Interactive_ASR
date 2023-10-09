@@ -1,0 +1,166 @@
+2023-10-07 02:11:45,680 INFO [streaming_server.py:808] {'encoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/encoder-epoch-99-avg-1.int8.onnx', 'decoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/decoder-epoch-99-avg-1.int8.onnx', 'joiner': './sherpa-onnx-streaming-zipformer-en-2023-06-21/joiner-epoch-99-avg-1.int8.onnx', 'paraformer_encoder': None, 'paraformer_decoder': None, 'tokens': './sherpa-onnx-streaming-zipformer-en-2023-06-21/tokens.txt', 'sample_rate': 16000, 'feat_dim': 80, 'provider': 'cpu', 'decoding_method': 'greedy_search', 'num_active_paths': 4, 'use_endpoint': 1, 'rule1_min_trailing_silence': 2.4, 'rule2_min_trailing_silence': 1.2, 'rule3_min_utterance_length': 20, 'hotwords_file': '', 'hotwords_score': 1.5, 'port': 6006, 'nn_pool_size': 1, 'max_batch_size': 50, 'max_wait_ms': 10, 'max_message_size': 1048576, 'max_queue_size': 32, 'max_active_connections': 500, 'num_threads': 2, 'certificate': None, 'doc_root': 'web'}
+2023-10-07 02:11:47,703 INFO [streaming_server.py:626] No certificate provided
+2023-10-07 02:11:47,709 INFO [server.py:711] server listening on [::]:6006
+2023-10-07 02:11:47,710 INFO [server.py:711] server listening on 0.0.0.0:6006
+2023-10-07 02:11:47,710 INFO [streaming_server.py:652] Please visit one of the following addresses:
+
+  http://localhost:6006
+
+Since you are not providing a certificate, you cannot use your microphone from within the browser using public IP addresses. Only localhost can be used.You also cannot use 0.0.0.0 or 127.0.0.1
+2023-10-07 02:12:42,065 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,066 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,143 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,143 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,145 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,146 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,146 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,146 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,147 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,147 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,147 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,147 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,200 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,202 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,202 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,203 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,211 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,212 INFO [server.py:268] connection closed
+2023-10-07 02:12:42,219 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:12:42,220 INFO [server.py:268] connection closed
+2023-10-07 02:12:43,119 INFO [server.py:646] connection open
+2023-10-07 02:12:43,119 INFO [streaming_server.py:693] Connected: ('::1', 52152, 0, 0). Number of connections: 1/500
+2023-10-07 02:13:17,071 INFO [streaming_server.py:677] Disconnected: ('::1', 52152, 0, 0). Number of connections: 0/500
+2023-10-07 02:13:17,072 ERROR [server.py:242] connection handler failed
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1278, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1134, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 538, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 370, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Read timed out. (read timeout=30.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/server.py", line 240, in handler
+    await self.ws_handler(self)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 670, in handle_connection
+    await self.handle_connection_impl(socket)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 719, in handle_connection_impl
+    text = generate(message['text'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 104, in generate
+    out=pn(f"""You are a helpful friend, try responding to the persons statements in a conversation like manner
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_node.py", line 140, in __call__
+    return self.prompt(self.default_prompt_template, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_node.py", line 179, in prompt
+    output = self.prompt_model.invoke(prompt, **kwargs_copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/prompt_model.py", line 111, in invoke
+    output = self.model_invocation_layer.invoke(prompt=prompt, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/invocation_layer/hugging_face_inference.py", line 173, in invoke
+    response: requests.Response = self._post(
+                                  ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/nodes/prompt/invocation_layer/hugging_face_inference.py", line 237, in _post
+    response = request_with_retry(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/utils/requests_utils.py", line 90, in request_with_retry
+    res = run()
+          ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tenacity/__init__.py", line 314, in iter
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/haystack/utils/requests_utils.py", line 82, in run
+    res = requests.request(**kwargs, timeout=timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/requests/adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Read timed out. (read timeout=30.0)
+2023-10-07 02:13:17,099 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,767 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,769 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,791 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,793 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,797 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,797 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,798 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,803 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,809 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,809 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,809 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,810 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,829 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,829 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,834 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,834 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,835 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,835 INFO [server.py:268] connection closed
+2023-10-07 02:13:49,842 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:13:49,842 INFO [server.py:268] connection closed

@@ -1,0 +1,73 @@
+2023-10-07 02:05:45,524 INFO [streaming_server.py:805] {'encoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/encoder-epoch-99-avg-1.int8.onnx', 'decoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/decoder-epoch-99-avg-1.int8.onnx', 'joiner': './sherpa-onnx-streaming-zipformer-en-2023-06-21/joiner-epoch-99-avg-1.int8.onnx', 'paraformer_encoder': None, 'paraformer_decoder': None, 'tokens': './sherpa-onnx-streaming-zipformer-en-2023-06-21/tokens.txt', 'sample_rate': 16000, 'feat_dim': 80, 'provider': 'cpu', 'decoding_method': 'greedy_search', 'num_active_paths': 4, 'use_endpoint': 1, 'rule1_min_trailing_silence': 2.4, 'rule2_min_trailing_silence': 1.2, 'rule3_min_utterance_length': 20, 'hotwords_file': '', 'hotwords_score': 1.5, 'port': 6006, 'nn_pool_size': 1, 'max_batch_size': 50, 'max_wait_ms': 10, 'max_message_size': 1048576, 'max_queue_size': 32, 'max_active_connections': 500, 'num_threads': 2, 'certificate': None, 'doc_root': 'web'}
+2023-10-07 02:05:48,422 INFO [streaming_server.py:626] No certificate provided
+2023-10-07 02:05:48,424 INFO [server.py:711] server listening on [::]:6006
+2023-10-07 02:05:48,431 INFO [server.py:711] server listening on 0.0.0.0:6006
+2023-10-07 02:05:48,431 INFO [streaming_server.py:652] Please visit one of the following addresses:
+
+  http://localhost:6006
+
+Since you are not providing a certificate, you cannot use your microphone from within the browser using public IP addresses. Only localhost can be used.You also cannot use 0.0.0.0 or 127.0.0.1
+2023-10-07 02:08:32,363 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,365 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,457 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,457 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,459 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,460 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,461 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,461 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,462 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,463 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,463 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,464 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,529 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,530 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,563 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,564 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,565 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,565 INFO [server.py:268] connection closed
+2023-10-07 02:08:32,581 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:08:32,582 INFO [server.py:268] connection closed
+2023-10-07 02:08:34,515 INFO [server.py:646] connection open
+2023-10-07 02:08:34,515 INFO [streaming_server.py:693] Connected: ('::1', 51097, 0, 0). Number of connections: 1/500
+2023-10-07 02:08:38,807 INFO [streaming_server.py:677] Disconnected: ('::1', 51097, 0, 0). Number of connections: 0/500
+2023-10-07 02:08:38,807 ERROR [server.py:242] connection handler failed
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/server.py", line 240, in handler
+    await self.ws_handler(self)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 670, in handle_connection
+    await self.handle_connection_impl(socket)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 721, in handle_connection_impl
+    voice(text)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 83, in voice
+    output = tts.tts_to_file(text=text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/TTS/api.py", line 391, in tts_to_file
+    wav = self.tts(text=text, speaker=speaker, language=language, speaker_wav=speaker_wav, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/TTS/api.py", line 338, in tts
+    wav = self.synthesizer.tts(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/TTS/utils/synthesizer.py", line 286, in tts
+    raise ValueError(
+ValueError: You need to define either `text` (for sythesis) or a `reference_wav` (for voice conversion) to use the Coqui TTS API.
+2023-10-07 02:08:38,817 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,243 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,244 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,295 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,312 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,312 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,313 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,313 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,313 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,314 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,314 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,314 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,314 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,360 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,360 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,369 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,370 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,370 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,371 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:10:15,371 INFO [server.py:268] connection closed
+2023-10-07 02:10:15,371 INFO [server.py:268] connection closed

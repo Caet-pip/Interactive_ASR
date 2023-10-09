@@ -68,8 +68,25 @@ model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
 
 from http_server import HttpServer
 
+
 from haystack.nodes import PromptNode
 from getpass import getpass
+
+
+from pydub import AudioSegment
+from pydub.playback import play
+
+
+from TTS.api import TTS
+tts = TTS(model_name = "tts_models/en/jenny/jenny")
+
+def voice(text):
+    output = tts.tts_to_file(text=text)
+    return output
+
+ 
+# for playing note.wav file
+
 
 HF_TOKEN = "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"
 
@@ -85,18 +102,17 @@ def generate(result: str):
                 max_length=800,
                 api_key=HF_TOKEN)
     
-    out=pn(f"""You are a helpful friend, try responding to the persons statements in a conversation like manner
-
-        Statement: {result}
-
-        Response: """)
-    # # Tokenize the combined text
+    out=pn(f"""Respond in less than 10 words for whatever I say, this is what I am saying:{result}""")
+    # Tokenize the combined text
     # input_ids = tokenizer(prompt, return_tensors="pt").input_ids
 
     # # Generate the answer
     # outputs = model.generate(input_ids)
-    # print("Answer:",tokenizer.decode(outputs[0], skip_special_tokens=True))
-    print(out[0])
+    # ans = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    ans = out[0]
+    return ans
+    print(out)
+    # print(out[0])
 
 
 def setup_logger(
@@ -696,19 +712,29 @@ Go back to <a href="/streaming_record.html">/streaming_record.html</a>
                 result = self.recognizer.get_result(stream)
 
                 message = {
-                    "text": result + str(response),
+                    "text": result,
                     "segment": segment,
                 }
                 if self.recognizer.is_endpoint(stream):
-                    response = generate(message['text'] + 'check')
-                    print(response)
+                    if message['text'] is None:
+                        pass
+                    else:
+                        if len(message['text']) < 1:
+                            pass
+                        else:
+                            print(message['text'])
+                            text = generate(message['text'])
+                            print("full:", text)
+                            n = text[0][0:20]
+                            print("shortened:", n)
+                            voice(text)
+                            song = AudioSegment.from_wav('output.wav')
+                            play(song)
                     self.recognizer.reset(stream)
                     segment += 1
 
                 await socket.send(json.dumps(message))
                 
-
-
         tail_padding = np.zeros(int(self.sample_rate * 0.3)).astype(np.float32)
         stream.accept_waveform(sample_rate=self.sample_rate, waveform=tail_padding)
         stream.input_finished()

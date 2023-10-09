@@ -1,0 +1,46 @@
+2023-10-07 02:01:59,550 INFO [streaming_server.py:805] {'encoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/encoder-epoch-99-avg-1.int8.onnx', 'decoder': './sherpa-onnx-streaming-zipformer-en-2023-06-21/decoder-epoch-99-avg-1.int8.onnx', 'joiner': './sherpa-onnx-streaming-zipformer-en-2023-06-21/joiner-epoch-99-avg-1.int8.onnx', 'paraformer_encoder': None, 'paraformer_decoder': None, 'tokens': './sherpa-onnx-streaming-zipformer-en-2023-06-21/tokens.txt', 'sample_rate': 16000, 'feat_dim': 80, 'provider': 'cpu', 'decoding_method': 'greedy_search', 'num_active_paths': 4, 'use_endpoint': 1, 'rule1_min_trailing_silence': 2.4, 'rule2_min_trailing_silence': 1.2, 'rule3_min_utterance_length': 20, 'hotwords_file': '', 'hotwords_score': 1.5, 'port': 6006, 'nn_pool_size': 1, 'max_batch_size': 50, 'max_wait_ms': 10, 'max_message_size': 1048576, 'max_queue_size': 32, 'max_active_connections': 500, 'num_threads': 2, 'certificate': None, 'doc_root': 'web'}
+2023-10-07 02:02:02,030 INFO [streaming_server.py:626] No certificate provided
+2023-10-07 02:02:02,033 INFO [server.py:711] server listening on [::]:6006
+2023-10-07 02:02:02,035 INFO [server.py:711] server listening on 0.0.0.0:6006
+2023-10-07 02:02:02,035 INFO [streaming_server.py:652] Please visit one of the following addresses:
+
+  http://localhost:6006
+
+Since you are not providing a certificate, you cannot use your microphone from within the browser using public IP addresses. Only localhost can be used.You also cannot use 0.0.0.0 or 127.0.0.1
+2023-10-07 02:02:23,493 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,494 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,581 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,581 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,584 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,586 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,587 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,588 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,588 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,588 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,589 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,589 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,642 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,642 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,806 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,807 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,807 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,808 INFO [server.py:268] connection closed
+2023-10-07 02:02:23,808 INFO [server.py:233] connection failed (200 OK)
+2023-10-07 02:02:23,811 INFO [server.py:268] connection closed
+2023-10-07 02:02:24,814 INFO [server.py:646] connection open
+2023-10-07 02:02:24,815 INFO [streaming_server.py:693] Connected: ('::1', 49578, 0, 0). Number of connections: 1/500
+2023-10-07 02:02:54,727 INFO [streaming_server.py:677] Disconnected: ('::1', 49578, 0, 0). Number of connections: 0/500
+2023-10-07 02:02:54,728 ERROR [server.py:242] connection handler failed
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/server.py", line 240, in handler
+    await self.ws_handler(self)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 670, in handle_connection
+    await self.handle_connection_impl(socket)
+  File "/Users/fawazahamedshaik/github/ASR/Interactive_ASR/./streaming_server.py", line 727, in handle_connection_impl
+    await socket.send(json.dumps(message))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/protocol.py", line 635, in send
+    await self.ensure_open()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/websockets/legacy/protocol.py", line 935, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status code [internal]); then sent 1005 (no status code [internal])
+2023-10-07 02:02:54,733 INFO [server.py:268] connection closed
